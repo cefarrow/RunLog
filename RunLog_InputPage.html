@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Clare's Running Log</title>
+  <meta name='description' content='my personal running log' />
+  <link rel='stylesheet' href='D:\Web Development\HTML - Personal Site\style.css' />
+  <script src='D:\Web Development\HTML - Personal Site\script.js' defer></script>
+</head>
+
+<body>
+  <div class='wrapper'>
+    <div class='content' role='main'>
+      <h1 class='title'>Clare's Running Log</h1>
+      <img src='https://clarerunshome.files.wordpress.com/2018/11/cropped-afterlightimage-2.jpg' class='illustration' />
+    </div>
+    <div class='instructions'>
+      <h2>Welcome! Please input today's run below:</h2>
+      <!---        <script>
+          function validateForm() {
+            let x = document.forms['runLog']['date'].value;
+            if (x == '') {
+              alert('Date must be entered.');
+              return false;
+            }
+          }
+        </script> --->
+      <script>
+        function validateForms() {
+          const date = document.forms['runLog']['date'].value;
+          const distance = document.forms['runLog']['distance'].value;
+          const duration = document.forms['runLog']['duration'].value;
+          const pace = document.forms['runLog']['pace'].value;
+          const power = document.forms['runLog']['power'].value;
+          const elevation = document.forms['runLog']['elevation'].value;
+          const rpe = document.forms['runLog']['rpe'].value;
+          const strava = document.forms['runLog']['strava-link'].value;
+          let array = [date, distance, duration, pace, power, elevation, rpe, strava];
+          if array.includes('') {
+            alert('All fields must be filled out.');
+            return false;
+          };
+        }
+      </script>
+      <form name='runLog' action='/action_page.php' onsubmit="return validateForm()" method='post'>
+        <p>
+          <label>Date <input type='date' name='date' /></label>
+        </p>
+        <p>
+          <label>Distance (miles) <input type='text' name='distance' /></label>
+        </p>
+        <p>
+          <label>Duration (hh:mm:ss) <input type='text' name='duration' /></label>
+        </p>
+        <p>
+          <label>Pace (min/mile) <input type='text' name='pace' /></label>
+        </p>
+        <p>
+          <label>Power (watts) <input type='text' name='power' /></label>
+        </p>
+        <p>
+          <label>Elevation (ft) <input type='text' name='elevation' /></label>
+        </p>
+        <p>
+          <label>Perceived Exertion (1-10) <input type='text' name='rpe' /></label>
+        </p>
+        <p>
+          <label>Strava Link <input type='text' name='strava-link' /></label>
+        </p>
+        <p>
+          <input type="submit" />
+        </p>
+        <p>
+          <input type="reset" />
+        </p>
+      </form>
+    </div>
+  </div>
+  <h3>Saved Runs</h3>
+  <div class='table'>
+    <table>
+      <thead>
+        <th>Date (mm/dd/yy)</th>
+        <th>Distance (miles)</th>
+        <th>Duration (hh:mm:ss)</th>
+        <th>Pace (min/mile)</th>
+        <th>Power (watts)</th>
+        <th>Elevation (ft)</th>
+        <th>Perceived Exertion (1-10)</th>
+        <th>Strava Link</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            03/16/22
+          </td>
+          <td>
+            7.93
+          </td>
+          <td>
+            01:11:40
+          </td>
+          <td>
+            9:02
+          </td>
+          <td>
+            220
+          </td>
+          <td>
+            190
+          </td>
+          <td>
+            4
+          </td>
+          <td>
+            <a href='https://www.strava.com/activities/6832814148'>Strava</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            03/15/22
+          </td>
+          <td>
+            9.18
+          </td>
+          <td>
+            01:16:07
+          </td>
+          <td>
+            8:17
+          </td>
+          <td>
+            243
+          </td>
+          <td>
+            210
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            <a href='https://www.strava.com/activities/6827929993'>Strava</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            03/14/22
+          </td>
+          <td>
+            7.46
+          </td>
+          <td>
+            01:10:03
+          </td>
+          <td>
+            9:23
+          </td>
+          <td>
+            214
+          </td>
+          <td>
+            197
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            <a href='https://www.strava.com/activities/6822902599'>Strava</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
